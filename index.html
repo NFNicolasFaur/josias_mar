@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi hijito</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            position: relative;
+            overflow-x: hidden;
+            /* Color de respaldo si la foto no carga */
+            background-color: #fce4ec; 
+        }
+
+        /* Capa para la foto de fondo con transparencia */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Aquí cargamos la foto */
+            background-image: url('fotojosias.jpeg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.2; /* Ajusta este número (0.1 a 1.0) para la transparencia */
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 90%;
+            background: rgba(255, 255, 255, 0.85); /* Fondo blanco semi-transparente */
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px); /* Desenfoque suave detrás del cuadro */
+            border: 4px solid #f8bbd0; /* Un pequeño borde rosado */
+        }
+
+        video {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #d81b60;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+
+        p {
+            font-size: 1.3rem;
+            color: #444;
+            font-weight: 500;
+        }
+
+        .corazon {
+            color: #e91e63;
+            font-size: 3rem;
+            display: block;
+            margin-top: 10px;
+            animation: latido 1.2s infinite;
+        }
+
+        @keyframes latido {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <video controls autoplay muted loop>
+            <source src="videojosias.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+
+        <h1>Feliz día del amor, hijito</h1>
+        <p>Te amo mucho, tu padre</p>
+        <span class="corazon">❤️</span>
+    </div>
+
+</body>
+</html>
